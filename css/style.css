@@ -1,19 +1,30 @@
-.loginPage {
+#loginPage {
   background-color: rgb(63, 63, 63);
   text-align: center;
   color: white;
-  display: block;
 }
 
-h2 {
+#loginPage h2 {
   color: rgb(255, 183, 28);
+}
+
+#loginPage a {
+  color: white;
 }
 
 #logo{
   width: auto;
-  height: 50%;
+  height: 10em;
 }
 
 .btn-orange {
   background-color: rgb(255, 183, 28);
+}
+
+.disappear {
+  display: none;
+}
+
+.show {
+  display: flex;
 }
