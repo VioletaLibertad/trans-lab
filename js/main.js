@@ -1,3 +1,4 @@
+/* Validación de usuario */
 function userValidation() {
   let userEmail = document.getElementById('inputEmail').value;
   let userPass = document.getElementById('inputPassword').value;
