@@ -2,7 +2,7 @@
   background-color: rgb(63, 63, 63);
   text-align: center;
   color: white;
-  /*display: none;*/
+  display: block;
 }
 
 h2 {
