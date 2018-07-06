@@ -1,9 +1,17 @@
+html {
+  height: 10vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
 /* Validación de usuario */
 #loginPage {
   background-color: rgb(63, 63, 63);
+  height: 100vh;
   text-align: center;
   color: white;
-  /*display: none;*/
 }
 
 #loginPage h2 {
@@ -35,4 +43,5 @@
 /*Home*/
 #home {
   background-color: rgb(197, 197, 197);
+  height: 100vh;
 }

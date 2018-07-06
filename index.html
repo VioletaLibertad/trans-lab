@@ -13,8 +13,7 @@
 
 <body>
   <!-- Login Page -->
-  <!-- Logo -->
-  <section id="loginPage">
+  <section id="loginPage" class="disappear">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
@@ -22,6 +21,7 @@
         </div>
       </div>
     </div>
+    <!-- Logo -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm"></div>
@@ -77,10 +77,11 @@
   </section>
 
   <!-- Home Page -->
-  <section id="home" class="disappear">
+  <section id="home">
+
     <!-- Navbar -->
-    <div class="container-fluid">
-      <div class="pos-f-t w-100 p-3">
+    <div class="navbar pos-f-t w-100">
+      <div class="pos-f-t w-100">
         <nav class="navbar navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +94,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
             <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-secondary">Ver saldo</button>
+              <button type="button" onclick="checkBalance()" class="btn btn-secondary">Ver saldo</button>
               <button type="button" class="btn btn-secondary">Calcular Tarifa</button>
               <button type="button" class="btn btn-secondary">Perfil</button>
               <button type="button" class="btn btn-secondary">Preguntas Frecuentes</button>
@@ -104,11 +105,12 @@
       </div>
     </div>
 
-    <div class="container-fluid">
+    <!-- Opciones principales -->
+    <div class="container-fluid main-options disappear">
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm-4">
-          <button type="button" class="btn btn-warning btn-lg btn-block">VER SALDO</button>
+          <button type="button" onclick="checkBalance()" id="btnCheck" class="btn btn-warning btn-lg btn-block">VER SALDO</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">CALCULAR TARIFA</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">PERFIL</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">PREGUNTAS FRECUENTES</button>
@@ -117,13 +119,47 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm">
-            <br>
+    <!-- Ver Saldo -->
+    <div class="container-fluid check-balance">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm-6">
+          <p class="font-weight-bold text-center">Su número de tarjeta:</p>
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Escriba o seleccione:">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary">Ver Saldo</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <button class="dropdown-item">Tarjeta 1</button>
+                <button class="dropdown-item">Tarjeta 2</button>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="col-sm"></div>
       </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm-6">
+          <!-- Tip: use bg-* and text-* utilities to style the card -->
+          <div class="card text-white text-center mx-auto" style="max-width: 20rem;">
+            <div class="card-header bg-dark">SALDO TOTAL</div>
+            <div class="card-body bg-warning">
+              <h4 class="card-title">$1.500</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Scripts -->
