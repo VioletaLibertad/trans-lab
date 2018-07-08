@@ -39,7 +39,7 @@ function exit() {
 /* Funciones de datos */
 function checkBalance() {
   let cardNumber = document.getElementById('cardNumber').value;
-  const apiLink = `http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${cardNumber}`;
+  const apiLink = `https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${cardNumber}`;
 
   fetch(apiLink)
     .then(response => response.json())
