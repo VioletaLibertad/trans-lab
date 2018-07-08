@@ -16,8 +16,7 @@
   <section id="loginPage" class="disappear">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm">
-          <br>
+        <div class="col-sm mt-4">
         </div>
       </div>
     </div>
@@ -50,15 +49,12 @@
             </div>
             <button type="button" class="btn btn-orange" onclick="userValidation()" id="btn-login">Iniciar Sesión</button>
             <div>
-              <br>
-            </div>
-            <div>
-              <label>
+              <label class="mt-3">
                 <a href="#">¿Olvidaste tu contraseña?</a>
               </label>
             </div>
             <div>
-              <label>
+              <label class="mt-3">
                 <a href="#">No eres miembro aún? Regístrate!</a>
               </label>
             </div>
@@ -70,7 +66,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
-          <br>
         </div>
       </div>
     </div>
@@ -80,37 +75,35 @@
   <section id="home">
 
     <!-- Navbar -->
-    <div class="navbar pos-f-t w-100">
-      <div class="pos-f-t w-100">
-        <nav class="navbar navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <span class="navbar-text mx-auto">
-            TRANS-LAB
-          </span>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-dark p-4">
-            <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example">
-              <button type="button" onclick="checkBalance()" class="btn btn-secondary">Ver saldo</button>
-              <button type="button" class="btn btn-secondary">Calcular Tarifa</button>
-              <button type="button" class="btn btn-secondary">Perfil</button>
-              <button type="button" class="btn btn-secondary">Preguntas Frecuentes</button>
-              <button type="button" class="btn btn-secondary">Home</button>
-            </div>
+    <div class="pos-f-t w-100">
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-text mx-auto">
+          TRANS-LAB
+        </span>
+      </nav>
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+            <button type="button" onclick="goToCheckBalance()" class="btn btn-link text-white">Ver saldo</button>
+            <button type="button" class="btn btn-link text-white">Calcular Tarifa</button>
+            <button type="button" class="btn btn-link text-white">Perfil</button>
+            <button type="button" class="btn btn-link text-white">Preguntas Frecuentes</button>
+            <button type="button" class="btn btn-link text-white">Home</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Opciones principales -->
-    <div class="container-fluid main-options disappear">
+    <div class="container-fluid" id="main-options">
       <div class="row">
         <div class="col-sm"></div>
-        <div class="col-sm-4">
-          <button type="button" onclick="checkBalance()" id="btnCheck" class="btn btn-warning btn-lg btn-block">VER SALDO</button>
+        <div class="col-sm-6">
+          <button type="button" onclick="goToCheckBalance()" id="btnCheck" class="btn btn-warning btn-lg btn-block mt-3">VER SALDO</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">CALCULAR TARIFA</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">PERFIL</button>
           <button type="button" class="btn btn-warning btn-lg btn-block">PREGUNTAS FRECUENTES</button>
@@ -120,45 +113,39 @@
     </div>
 
     <!-- Ver Saldo -->
-    <div class="container-fluid check-balance">
-      <div class="row">
-        <div class="col-sm"></div>
-        <div class="col-sm-6">
-          <p class="font-weight-bold text-center">Su número de tarjeta:</p>
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Escriba o seleccione:">
-            <div class="input-group-append">
-              <button type="button" class="btn btn-outline-secondary">Ver Saldo</button>
-              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <button class="dropdown-item">Tarjeta 1</button>
-                <button class="dropdown-item">Tarjeta 2</button>
+    <section class="disappear" id="check-balance">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm-6">
+            <p class="font-weight-bold text-center mt-3">Su número de tarjeta:</p>
+            <div class="input-group">
+              <input type="number" class="form-control" id="cardNumber" aria-label="Text input with segmented dropdown button" placeholder="Escriba o seleccione:">
+              <div class="input-group-append">
+                <button type="button" onclick="checkBalance()" class="btn btn-outline-secondary">Ver Saldo</button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item">Tarjeta 1</button>
+                  <button class="dropdown-item">Tarjeta 2</button>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-sm"></div>
         </div>
-        <div class="col-sm"></div>
       </div>
-    </div>
-    <br>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm"></div>
-        <div class="col-sm-6">
-          <!-- Tip: use bg-* and text-* utilities to style the card -->
-          <div class="card text-white text-center mx-auto" style="max-width: 20rem;">
-            <div class="card-header bg-dark">SALDO TOTAL</div>
-            <div class="card-body bg-warning">
-              <h4 class="card-title">$1.500</h4>
-            </div>
-          </div>
+
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm-6" id="balanceContainer"></div>
+          <div class="col-sm"></div>
         </div>
-        <div class="col-sm"></div>
       </div>
-    </div>
+    </section>
 
   </section>
 

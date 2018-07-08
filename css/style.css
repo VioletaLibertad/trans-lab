@@ -1,5 +1,5 @@
 html {
-  height: 10vh;
+  height: 100vh;
 }
 
 body {
@@ -44,4 +44,8 @@ body {
 #home {
   background-color: rgb(197, 197, 197);
   height: 100vh;
+}
+
+.menu {
+  position: absolute;
 }

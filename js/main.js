@@ -1,6 +1,7 @@
 /* Validación de usuario */
 function userValidation() {
   let userEmail = document.getElementById('inputEmail').value;
+  localStorage.setItem('userEmail', userEmail);
   let userPass = document.getElementById('inputPassword').value;
   for (let i = 0; i < userEmail.length; i++) {
     for (let j = 0; j < userPass.length; j++) {
@@ -22,3 +23,30 @@ function userValidation() {
   }
 };
 
+function goToCheckBalance() {
+  document.getElementById('main-options').classList.add('disappear');
+  document.getElementById('check-balance').classList.remove('disappear');
+  document.getElementById('check-balance').classList.remove('show');
+}
+
+function checkBalance() {
+  let cardNumber = document.getElementById('cardNumber').value;
+  const apiLink = `http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${cardNumber}`;
+
+  fetch(apiLink)
+  .then(response => response.json())
+  .then(data => {
+    let balance = data.saldoTarjeta;
+    const balanceContainer = document.getElementById('balanceContainer');
+    balanceContainer.innerHTML = 
+    `<div class="card text-white text-center mx-auto" style="max-width: 20rem;">
+      <div class="card-header bg-dark">SALDO TOTAL</div>
+      <div class="card-body bg-warning">
+        <h4 class="card-title">${balance}</h4>
+      </div>
+    </div>`;
+  })
+  .catch(error => {
+    console.log(error);
+  })
+}
